@@ -4,11 +4,16 @@ import MyInput from './MyInput';
 import Sections from './Sections';
 
 const Main = () => {
+  const GRAY = 'bg-gray-400';
+  const RED = 'bg-red-400';
+  const YELLOW = 'bg-yellow-400';
+  const GREEN = 'bg-green-400';
+
   const [value, setValue] = useState('');
   const [bg, setBG] = useState({
-    one: 'bg-gray-400',
-    two: 'bg-gray-400',
-    three: 'bg-gray-400',
+    one: GRAY,
+    two: GRAY,
+    three: GRAY,
   });
 
   const checkLetters = (str) => {
@@ -18,53 +23,54 @@ const Main = () => {
     return /[!,%,@,#,$,^,*,?,_,~]/g.test(str);
   };
   const checkDigits = (str) => {
-    return /[0-9]/gi.test(str);
+    return /[0-9]/g.test(str);
   };
 
   const GlobalCheck = (item) => {
     const arr = [checkLetters(item), checkDigits(item), checkSymbols(item)];
-    const filtered = arr.filter((item) => item === true);
+    const filtered = arr.filter((item) => item);
     return filtered.length;
   };
 
   useEffect(() => {
     if (value.length === 0) {
       setBG({
-        one: 'bg-gray-400',
-        two: 'bg-gray-400',
-        three: 'bg-gray-400',
+        one: GRAY,
+        two: GRAY,
+        three: GRAY,
       });
       return;
     }
     if (value.length < 8) {
       setBG({
-        one: 'bg-red-400',
-        two: 'bg-red-400',
-        three: 'bg-red-400',
+        one: RED,
+        two: RED,
+        three: RED,
       });
       return;
     }
     if (GlobalCheck(value) === 1) {
       setBG({
-        one: 'bg-red-400',
-        two: 'bg-gray-400',
-        three: 'bg-gray-400',
+        one: RED,
+        two: GRAY,
+        three: GRAY,
       });
     }
     if (GlobalCheck(value) === 2) {
       setBG({
-        one: 'bg-yellow-400',
-        two: 'bg-yellow-400',
-        three: 'bg-gray-400',
+        one: YELLOW,
+        two: YELLOW,
+        three: GRAY,
       });
     }
     if (GlobalCheck(value) === 3) {
       setBG({
-        one: 'bg-green-400',
-        two: 'bg-green-400',
-        three: 'bg-green-400',
+        one: GREEN,
+        two: GREEN,
+        three: GREEN,
       });
     }
+    // eslint-disable-next-line
   }, [value]);
 
   return (

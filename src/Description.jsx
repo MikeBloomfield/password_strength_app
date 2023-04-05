@@ -6,16 +6,14 @@ const Description = () => {
       <div>
         {' '}
         1. Only letters/digits/symbols - the password is{' '}
-        <span className="text-red-400 font-bold" style={{ textShadow: ' 0.5px 0.5px 0.5px #000' }}ы>
+        <span className="text-red-400 font-bold" style={{ textShadow: ' 1px 1px 0.5px #000' }} ы>
           easy
         </span>
       </div>
       <br />
       <div>
         2. Combination of letters-symbols/letters-digits/digits-symbols - the password is{' '}
-        <span
-          className="text-yellow-400 font-bold "
-          style={{ textShadow: ' 0.5px 0.5px 0.5px #000' }}>
+        <span className="text-yellow-400 font-bold " style={{ textShadow: ' 1px 1px 0.5px #000' }}>
           medium
         </span>
         ;
@@ -24,17 +22,13 @@ const Description = () => {
       <div>
         {' '}
         3. Has letters, symbols and numbers - the password is{' '}
-        <span
-          className="text-green-400 font-bold"
-          style={{ textShadow: ' 0.5px 0.5px 0.5px #000' }}>
+        <span className="text-green-400 font-bold" style={{ textShadow: ' 1px 1px 0.5px #000' }}>
           strong
         </span>
         ;
       </div>
       <br />
-      <div>
-        4. Note: password should be at least 8 characters (otherwise all bars become red)
-      </div>
+      <div>4. Note: password should be at least 8 characters (otherwise all bars become red)</div>
     </div>
   );
 };
