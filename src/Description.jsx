@@ -33,7 +33,7 @@ const Description = () => {
       </div>
       <br />
       <div>
-        4. Note: password should be at least 8 characters (otherwise bars will be painted red)
+        4. Note: password should be at least 8 characters (otherwise all bars become red)
       </div>
     </div>
   );
